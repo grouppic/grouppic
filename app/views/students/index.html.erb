@@ -1,0 +1,33 @@
+<h1>Listing students</h1>
+
+<div class="colmask leftmenu">
+  <div class="col1">
+    <ul id="sortable0">
+      <% @students.each do |student| %>
+        <li>
+        <%= "#{student.name} (#{student.grade} : #{student.gpa})" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col2">
+    <div style="float:left;width:100%;">
+      <div style="float:left;width:33.33%">
+        <ul id="sortable1" class="connectedSortable">
+          <li>GROUP 1</li>
+        </ul>
+      </div>
+      <div style="float:left;width:33.33%">
+        <ul id="sortable2" class="connectedSortable">
+          <li>GROUP 2</li>
+        </ul>
+      </div>
+      <div style="float:left;width:33.33%">
+        <ul id="sortable3" class="connectedSortable">
+          <li>GROUP 3</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

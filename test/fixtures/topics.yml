@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  name: MyString
+  subject: MyString
+  grade: 1
+  description: MyText
+
+two:
+  id: 1
+  name: MyString
+  subject: MyString
+  grade: 1
+  description: MyText

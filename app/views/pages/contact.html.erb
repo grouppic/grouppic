@@ -1,0 +1,20 @@
+
+<div class="content">
+<h1>Contact Us</h1>
+	<% if flash[:notice] %>
+	     <div class="notice"><%= flash[:notice] %></div>
+	<% else %>
+	<p>Please fill in the form below to contact us:</p>
+	<% end %>
+
+<%= form_for :cform, :url => {:action => "contact" }, :html => {:class => "contactform"} do |f| %>
+<table class="contactlabel">
+   <tr><td><%= f.label :name, 'Name *' %>		</td><td> <%= f.text_field :name %> 	</td></tr>
+   <tr><td><%= f.label :email, 'Email *' %>		</td><td> <%= f.text_field :email %> 	</td></tr>
+   <tr><td><%= f.label :subject, 'Subject *' %>	</td><td> <%= f.text_field :subject %> 	</td></tr>
+   <tr><td style="vertical-align:top; padding-top:5px;"><%= f.label :message, 'Message *' %> 	</td><td> <%= f.text_area :message %> 	</td></tr>
+   <tr><td> </td><td><%= f.submit "Submit" %> </td></tr>
+</table>
+<% end %>
+
+</div>
