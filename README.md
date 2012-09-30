@@ -1,4 +1,4 @@
 grouppic
 ========
 
-Demo app for SLC
+Demo app for Shared Learning Collaborative (slcedu.org)
