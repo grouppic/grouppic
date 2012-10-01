@@ -12,8 +12,8 @@ end
 module Grouppic
   class Application < Rails::Application
     config.slc_base_url = "https://api.sandbox.slcedu.org/api"
-    config.slc_client_id = ""
-    config.slc_client_secret = ""
+    config.slc_client_id = "GET-FROM-SLC-DEV"
+    config.slc_client_secret = "GET-FROM-SLC-DEV"
     config.slc_header = { "Content-Type" => "application/vnd.slc+json", "Accept" => "application/vnd.slc+json" }
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -70,9 +70,9 @@ module Grouppic
     config.action_mailer.smtp_settings = 
       {  :address              => "smtp.gmail.com"  ,
         :port                 => 587               ,
-        :domain               => 'iapps.in'        ,
-        :user_name            => 'contact@iapps.in',
-        :password             => '_k3iWu@4o'       ,
+        :domain               => 'example.com'        ,
+        :user_name            => 'xyz@example.com',
+        :password             => 'PASSWORD'       ,
         :authentication       => 'plain'           ,
         :enable_starttls_auto => true  
     }
