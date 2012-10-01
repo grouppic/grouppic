@@ -1,10 +1,9 @@
 <!-- START Menu -->
-<div>
-  <div style="float:left;">
+<div id="menu">
     GROUPS:
     <select id="filter_groups" name="filter[groups]">
       <option value="2">2</option>
-      <option value="3">3</option>
+      <option value="3" selected="selected">3</option>
       <option value="4">4</option>
     </select>
     CRITERION:
@@ -13,14 +12,14 @@
       <option value="name">Name</option>
       <option value="random">Random</option>
     </select>
-   </div>
 </div>
 <!-- END Menu -->
 <div class="colmask leftmenu">
   <div class="col1">
+    <div class="grouping">YOUR STUDENTS</div>
     <ul id="sortable0">
       <% @students.each do |student| %>
-        <li> 
+        <li>
         <!--
         <%= "#{student.name} (#{student.grade} : #{student.gpa})" if false %> 
         -->
@@ -30,23 +29,13 @@
     </ul>
   </div>
   <div class="col2">
-    <div style="float:left;width:100%;">
-      <div style="float:left;width:33.33%">
-        <ul id="sortable1" class="connectedSortable">
-          <li>GROUP 1</li>
-        </ul>
+    <div>
+      <% @groups.each_with_index do |group, i| %>
+      <div style="float:left;width:<%= 100/@groups.count %>%">
+        <div class="grouping"><%= group.name %></div>
+        <ul id="sortable<%= i %>" class="connectedSortable"></ul>
       </div>
-      <div style="float:left;width:33.33%">
-        <ul id="sortable2" class="connectedSortable">
-          <li>GROUP 2</li>
-        </ul>
-      </div>
-      <div style="float:left;width:33.33%">
-        <ul id="sortable3" class="connectedSortable">
-          <li>GROUP 3</li>
-        </ul>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
-

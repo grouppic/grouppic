@@ -94,7 +94,16 @@ div#logo {
 	display:block;
 }
 div#menu {
-	padding:10px 0px;
+	position:fixed;
+	display:block;
+	z-index:10;
+	right:10px;
+	top:10px;
+	border-radius:5px;
+	padding:5px;
+	color:#FFF;
+	background-color:#1E4B82;
+	border:1px solid #356298;
 }
 div#topframe {
 	height:5em;
@@ -112,7 +121,12 @@ div#topframe {
 	line-height:20px;
 	background:#FFF;
 }
-.footer {color:#FFF;margin:0px 30px;}
+.footer {
+	color:#FFF;
+	margin:0px 30px;
+	clear:both;
+	padding:10px 0px;
+}
 .footer a {
 	display:inline;
 	background-color:#666;
@@ -197,6 +211,7 @@ img {
 	clear:both;
 	float:left;
 	width:100%;
+	background-color:#000;
 }
 #header {
 	border-bottom:1px solid #000;
@@ -247,6 +262,11 @@ img {
 #header ul li a span {
 	display:block;
 }
+.grouping {
+	color:#999;
+	font-size:1.1em;
+	font-weight:bold;
+}
 /* 'widths' sub menu */
 #layoutdims {
 	clear:both;
@@ -280,24 +300,20 @@ img {
 	padding:0 0 1em 0;
 	overflow:hidden;
 }
-.col1 {
-	border-right:1px solid #666;
-}
 /* 2 Column (left menu) settings */
 .leftmenu {
 	background:#000;		/* right column background colour */
 }
 .leftmenu .colleft {
 	right:80%;			/* right column width */
-	background:#333;	/* left column background colour */
+	background:#1E4B82;	/* left column background colour */
 }
 .leftmenu .col1 {
-	width:21%;			/* right column content width */
+	width:20%;			/* right column content width */
 	left:0%;			/* 100% plus left column left padding */
 }
 .leftmenu .col2 {
-	width:73%;			/* left column content width (column width minus left and right padding) */
-	left:6%;			/* (right column left and right padding) plus (left column left padding) */
+	width:80%;			/* left column content width (column width minus left and right padding) */
 	height:600px;
 }
 /* Footer styles */
