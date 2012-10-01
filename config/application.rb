@@ -70,9 +70,9 @@ module Grouppic
     config.action_mailer.smtp_settings = 
       {  :address              => "smtp.gmail.com"  ,
         :port                 => 587               ,
-        :domain               => 'iapps.in'        ,
-        :user_name            => 'contact@iapps.in',
-        :password             => '_k3iWu@4o'       ,
+        :domain               => 'example.com'        ,
+        :user_name            => 'xyz@example.com',
+        :password             => 'PASSWORD'       ,
         :authentication       => 'plain'           ,
         :enable_starttls_auto => true  
     }
