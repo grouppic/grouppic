@@ -2,19 +2,13 @@ class StudentsController < ApplicationController
     respond_to :html, :js
 
   def index
-    #TODO: Abstract to model
-    #@students = Student.stu_list
-    @url = Rails.application.config.slc_base_url + "/rest/v1/students"
-    #Rails.logger.debug @url.inspect
-    @students = RestClient.get(@url, Rails.application.config.slc_header) {|resp, req, res| JSON.parse(resp)}
-    @students.map {|s| s["name"]["firstName"] + " " + s["name"]["lastSurname"] }
-    # @students = Student.all.sort_by {|s| s.gpa}
+    @students = Student.slc_list(session[:token])
+    #@students = Student.all.sort_by {|s| s.gpa}
     @groups = Group.all
     while (@groups.count < 3) do
       @groups << Group.create({:name => "GROUP #{@groups.count + 1}"})
     end
     @groups = @groups.first(3)
-    #@students = Student.fixedlist
     #@group = params[:groupno].blank? ? nil : params[:groupno].strip
     #@criteria = params[:criteria].blank? ? nil : params[:criteria].strip
   end
