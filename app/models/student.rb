@@ -7,29 +7,4 @@ class Student < ActiveRecord::Base
     resp.map {|s| s["name"]["firstName"] + " " + s["name"]["lastSurname"] }
   end
 
-  def self.fixedlist
-    [ "Jiani Wu ",
-      "Jenny Xie",
-      "Brett Hebert",
-      "Robert Snyder",
-      "Alvaro Achon",
-      "Yury V Kuzmichev",
-      "Kathleen Ismer",
-      "Jagmit Rekhi",
-      "meghan OTool",
-      "Guosong Shao",
-      "Oriana korol",
-      "Rafael Chow",
-      "Rohan Ratnapal",
-      "Ryan Pinette",
-      "Shalin Patel",
-      "Shannon O'Brien",
-      "Soojin S Sung",
-      "Vanessa Fong",
-      "Tim Spears",
-      "Xiaoan yan",
-      "Yudy Halim Tan"
-      ]
-  end
-
 end

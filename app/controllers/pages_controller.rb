@@ -2,19 +2,15 @@ class PagesController < ApplicationController
 
   respond_to :html, :js
 
-  def header
-    { "Content-Type" => "application/vnd.slc+json", "Accept" => "application/vnd.slc+json" }
-  end
-
   def index
-    @oauthurl = "#{Rails.application.config.slc_base_url}/oauth/authorize?client_id=#{Rails.application.config.slc_client_id}&redirect_uri=http://grouppic.cognii.com/callback"
+    @oauthurl = "#{Rails.application.config.slc_base_url}/oauth/authorize?client_id=#{Rails.application.config.slc_client_id}&redirect_uri=#{Rails.application.config.base_url}/callback"
   end
 
   def about
   end
 
   def callback
-    oauthurl = "#{Rails.application.config.slc_base_url}/oauth/token?code=#{params['code']}&grant_type=authorization_code&client_id=#{Rails.application.config.slc_client_id}&client_secret=#{Rails.application.config.slc_client_secret}&redirect_uri=http://grouppic.cognii.com/callback"
+    oauthurl = "#{Rails.application.config.slc_base_url}/oauth/token?code=#{params['code']}&grant_type=authorization_code&client_id=#{Rails.application.config.slc_client_id}&client_secret=#{Rails.application.config.slc_client_secret}&redirect_uri=#{Rails.application.config.base_url}/callback"
     respon = RestClient.get(oauthurl, Rails.application.config.slc_header) {|resp, req, res| JSON.parse(resp)}
     token = respon["access_token"]
     session[:token] = token
