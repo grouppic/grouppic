@@ -7,8 +7,9 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 gem "therubyracer", :require => 'v8'
+gem 'oauth'
+gem "oauth-plugin", "~> 0.4.0"
 gem 'rest-client'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
